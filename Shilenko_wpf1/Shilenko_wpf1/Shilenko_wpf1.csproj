@@ -35,9 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,27 +65,77 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\CaptchaGenerator.cs" />
+    <Compile Include="Models\Cars.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Clients.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Drivers.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeePositions.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Maintenance.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelAvtobese.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAvtobese.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelAvtobese.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelAvtobese.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAvtobese.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orders.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payments.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Routes.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trips.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TripStatuses.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TripTimes.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehicleStatuses.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Waybills.cs">
+      <DependentUpon>ModelAvtobese.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Autho.xaml.cs">
       <DependentUpon>Autho.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Client.xaml.cs">
       <DependentUpon>Client.xaml</DependentUpon>
     </Compile>
-    <Compile Include="zad_1.xaml.cs">
-      <DependentUpon>zad_1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="zad_2.xaml.cs">
-      <DependentUpon>zad_2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="zad_3.xaml.cs">
-      <DependentUpon>zad_3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="zad_4.xaml.cs">
-      <DependentUpon>zad_4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="zad_5.xaml.cs">
-      <DependentUpon>zad_5.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Services\Hash.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,26 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Client.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="zad_1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="zad_2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="zad_3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="zad_4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="zad_5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +175,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Models\ModelAvtobese.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelAvtobese.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ModelAvtobese.edmx.diagram">
+      <DependentUpon>ModelAvtobese.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,6 +196,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\ModelAvtobese.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelAvtobese.Context.cs</LastGenOutput>
+      <DependentUpon>ModelAvtobese.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelAvtobese.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelAvtobese.edmx</DependentUpon>
+      <LastGenOutput>ModelAvtobese.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,9 +20,10 @@ namespace Shilenko_wpf1.Pages
     /// </summary>
     public partial class Client : Page
     {
-        public Client()
+        public Client(object user, string role)
         {
             InitializeComponent();
+
         }
     }
 }

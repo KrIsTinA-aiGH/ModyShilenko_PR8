@@ -6,42 +6,28 @@
       xmlns:local="clr-namespace:Shilenko_wpf1.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Auto" Background="White">
+      Title="Autho"
+      Background="White">
 
     <Grid>
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="260"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="260"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" 
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center">
-            <TextBlock Text="Логин:"/>
-            <TextBox x:Name="txtLogin"/>
-            <TextBlock Text="Пароль:"/>
-            <PasswordBox x:Name="pswdPassword"/>
-            <TextBlock Visibility="Hidden" 
-                       x:Name="txtBlockCaptcha" 
-                       Text="Капча:"/>
-            <TextBox Visibility="Hidden" 
-                     x:Name="txtboxCaptcha"/>
-            <TextBlock HorizontalAlignment="Center" 
-                       Visibility="Hidden" 
-                       x:Name="txtBlockTimer"/>
-            <StackPanel Orientation="Horizontal" 
-                        Height="80" 
-                        HorizontalAlignment="Center">
-                <Button x:Name="btnEnterGuest" 
-                        Margin="5,15,5,5" 
-                        Content="Войти как гость" 
-                        Click="btnEnterGuest_Click"/>
-                <Button x:Name="btnEnter" 
-                        Margin="5,15,5,5" 
-                        Content="Войти" 
-                        Click="btnEnter_Click"/>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Логин"/>
+            <TextBox x:Name="tbLogin"/>
+            <TextBlock Text="Пароль"/>
+            <PasswordBox x:Name="tbPassword"/>
+            <TextBlock x:Name="tblCaptcha" Text="Капча"/>
+            <TextBox x:Name="tbCaptcha"/>
+
+            <TextBlock x:Name="tbTimer"/>
+            <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center">
+                <Button x:Name="btnEnterGuest" Margin="5,15,5,5" Content="Войти как гость" Click="btnEnterGuest_Click"/>
+                <Button x:Name="btnEnter" Margin="5,15,5,5" Content="Войти" Click="btnEnter_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

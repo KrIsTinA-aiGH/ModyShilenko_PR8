@@ -1,25 +1,21 @@
 ﻿<Window x:Class="Shilenko_wpf1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Shilenko_wpf1"
         mc:Ignorable="d"
-        Title="Задачи" Height="170.446" Width="537" Icon="Resources/icon.ico">
+        Title="Руль" Height="710" Width="1000" MinHeight = "710" MinWidth ="1000" WindowStartupLocation = "CenterScreen" Icon="/Resources/icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-    <Grid Grid.Row="0" Background="#FF76E383">
-        <Image Width="45" HorizontalAlignment="Left" Margin="5,0,0,90.333" Source="Resources/logo.png"/>
-        <Button x:Name="btnBack" HorizontalAlignment="Right" Content="Назад" Click="btnBack_Click" Height="Auto" Margin="0,10,4.667,90.333"/>
+        <Grid Grid.Row="0" Background="#FF76E383">
+            <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Right" Cursor="Hand" Click="btnBack_Click"/>
+            <Image HorizontalAlignment="Left" Margin="10,7,0,7" Width="45" Source="/Resources/logo.png"/>
+        </Grid>
 
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="230,10,0,0" TextWrapping="Wrap" Text="Вариант №9" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.255,-0.426" TextChanged="TextBox_TextChanged" ContextMenuClosing="TextBox_ContextMenuClosing" DataContextChanged="TextBox_DataContextChanged"/>
-        <Button Content="Задача 1" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="75" x:Name="zad1" Click="Zad1_Click" />
-        <Button Content="Задача 2" HorizontalAlignment="Left" Margin="122,63,0,0" VerticalAlignment="Top" Width="75" x:Name="zad2" Click="Zad2_Click" />
-        <Button Content="Задача 3" HorizontalAlignment="Left" Margin="230,63,0,0" VerticalAlignment="Top" Width="81" x:Name="zad3" Click="Zad3_Click" />
-        <Button Content="Задача 4" HorizontalAlignment="Left" Margin="351,63,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.717,0.5" x:Name="zad4" Click="Zad4_Click" />
-        <Button Content="Задача 5" HorizontalAlignment="Left" Margin="445,63,0,0" VerticalAlignment="Top" Width="75" x:Name="zad5" Click="Zad5_Click" />
-        <Frame x:Name="Main" Navigated="Main_Navigated"></Frame>
-
-        <Frame x:Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="FrmMain_ContentRendered"/>
+        <Frame x:Name="fr_content" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="frame_Content"/>
     </Grid>
-
 </Window>
